@@ -1,0 +1,75 @@
+{
+	"data" : {
+		"PurchaseOrderReceiptBatch" : {
+			"POReceipt" : {
+				"POReceiptNumber" : "Y12345601",
+				"PONumber" : "44068757",
+				"POReceiptDate" : "06252017",
+				"POReceiptTimestamp" : "061320170858",
+				"POShipMethod" : "127198",
+				"POReceiptLines" : {
+					"ReceiptLine" : [{
+							"ProductID" : "305180",
+							"POLineNo" : "1",
+							"POReceiptLineNo" : "1",
+							"OriginalProductID" : "997000123456",
+							"WHLocation" : "LDC East – Receiving",
+							"QuantityReceived" : "30"
+						}, {
+							"ProductID" : "4530854",
+							"POLineNo" : "3",
+							"POReceiptLineNo" : "2",
+							"OriginalProductID" : "997000123459",
+							"WHLocation" : "LDC East – Receiving",
+							"QuantityReceived" : "20"
+						}
+					]
+				}
+			}
+		}
+	},
+	"mappings" : {
+		"recType" : "itemreceipt",
+		"mappings" : {
+			"bodyLevel" : {
+				"path" : "PurchaseOrderReceiptBatch.POReceipt",
+				"mappings" : [{
+						"externalField" : "POReceiptNumber",
+						"nsField" : "custbody_bibo_unique_tran_id"
+					}, {
+						"externalField" : "PONumber",
+						"nsField" : "createdfrom"
+					}, {
+						"externalField" : "POShipMethod",
+						"nsField" : "shipmethod"
+					}
+				]
+			},
+			"sublists" : {
+				"item" : {
+					"sublistPath" : "PurchaseOrderReceiptBatch.POReceipt.POReceiptLines.ReceiptLine",
+					"mappings" : [{
+							"externalField" : "POLineNo",
+							"nsField" : "orderline"
+						}, {
+							"externalField" : "POReceiptLineNo",
+							"nsField" : "custcol_bibo_item_line_no"
+						}, {
+							"externalField" : "OriginalProductID",
+							"nsField" : "vendorname"
+						}, {
+							"externalField" : "ProductID",
+							"nsField" : "itemid"
+						}, {
+							"externalField" : "WHLocation",
+							"nsField" : "location"
+						}, {
+							"externalField" : "QuantityReceived",
+							"nsField" : "quantity"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+<PurchaseOrderReceiptBatch>
+	<POReceipt>
+		<POReceiptNumber>Y12345601</POReceiptNumber>
+		<PONumber>Y123456</PONumber>				
+		<POReceiptDate>06252017</POReceiptDate>		
+		<POReceiptTimestamp>061320170858</POReceiptTimestamp>
+		<POReceiptLines>
+			<ReceiptLine>
+				<POLineNo>1</POLineNo>
+				<POReceiptLineNo>1</POReceiptLineNo>
+				<OriginalProductID>997000123456</OriginalProductID>
+				<ProductID>00121314</ProductID>				
+				<WHLocation>LDC East – Receiving</WHLocation>
+				<QuantityReceived>30</QuantityReceived>		
+			</ReceiptLine>
+			<ReceiptLine>
+				<POLineNo>3</POLineNo>
+				<POReceiptLineNo>2</POReceiptLineNo>
+				<OriginalProductID>997000123459</OriginalProductID>
+				<ProductID>00121317</ProductID>
+				<WHLocation>LDC East – Receiving</WHLocation>	
+				<QuantityReceived>20</QuantityReceived>
+			</ReceiptLine>
+		</POReceiptLines>
+	</POReceipt>
+</PurchaseOrderReceiptBatch>
